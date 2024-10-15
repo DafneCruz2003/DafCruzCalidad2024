@@ -1,5 +1,9 @@
 prueba
 git
 hola
+<<<<<<< HEAD
 
 esta es otra linea lcal
+=======
+agregando linea desde repo remoto...
+>>>>>>> branch 'main' of https://github.com/DafneCruz2003/DafCruzCalidad2024.git
