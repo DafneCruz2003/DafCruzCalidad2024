@@ -1,2 +1,2 @@
-# DafCruzCalidad2024
-probando calidad de sw
+# AngelDzulCalidad2024
+retro de la clase de calidad
