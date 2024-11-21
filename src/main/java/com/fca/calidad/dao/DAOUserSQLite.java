@@ -25,7 +25,7 @@ public class DAOUserSQLite implements IDAOUser {
 			// Establish the driver connector
 			//Class.forName(DRIVER_NAME);
 			// Set the URI for connecting the MySql database
-			con = DriverManager.getConnection("jdbc:sqlite:/Users/patriciaortegoncano/Documents/FCA/Agosto2024/db/users.db", "", "");
+			con = DriverManager.getConnection("jdbc:sqlite:/Users/base2/OneDrive/Escritorio/users.db-journal", "", "");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
