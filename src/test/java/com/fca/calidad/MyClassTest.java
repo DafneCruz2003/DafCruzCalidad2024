@@ -12,11 +12,11 @@ class MyClassTest {
         MyClass myClassMock = mock(MyClass.class);
         when(myClassMock.getClassNameUpperCase()).thenReturn("Hola");
         assertEquals("Hola", myClassMock.getClassNameUpperCase());
-    }
+    }//este es el mockito donde probare hola (unitaria)
 
     @Test
     void testThenCallRealMethod() {
-        // Usar un spy en lugar de un mock
+        // Usare un spy para llamar al metodo real con el nombre de la clase (MYCLASS)
         MyClass myClassSpy = spy(new MyClass());
         when(myClassSpy.getClassNameUpperCase()).thenCallRealMethod();
         assertEquals("MYCLASS", myClassSpy.getClassNameUpperCase());
@@ -24,6 +24,7 @@ class MyClassTest {
 
     @Test
     void testThenAnswer() {
+    	//usare un lambda para poder usar parametros diferentes (agregarle string)
         MyClass myClassMock = mock(MyClass.class);
         when(myClassMock.getClassNameUpperCase()).thenAnswer(invocation -> {
             String className = MyClass.class.getSimpleName();
