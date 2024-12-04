@@ -48,15 +48,15 @@ public class DAOUserSQLite implements IDAOUser {
 			rs = preparedStatement.executeQuery();
 
 			// Obtain the pointer to the data in generated table
-			rs.next();
+			if (rs.next()) {
 
 			int id = rs.getInt(1);
 			String username  = rs.getString(2);
-			String email = rs.getString(3);
+			String emailUser = rs.getString(3);
 			String password = rs.getString(4);
 			int isLogged = rs.getInt(5);
 
-			result = new User(username, password, email);
+			result = new User(username, password, emailUser);
 			result.setId(id);
 			result.setLogged(isLogged == 1? true: false);
 
@@ -72,7 +72,7 @@ public class DAOUserSQLite implements IDAOUser {
 			rs.close();
 			preparedStatement.close();
 
-		} catch (Exception e) {
+		}} catch (Exception e) {
 			System.out.println(e);
 		}
 		// Return statement
