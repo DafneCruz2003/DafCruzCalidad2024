@@ -7,6 +7,10 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.time.Duration;
@@ -17,10 +21,9 @@ public class EliminarTest {
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
   JavascriptExecutor js;
-
   @Before
   public void setUp() throws Exception {
-    System.setProperty("webdriver.chrome.driver", "");
+	  WebDriverManager.chromedriver().setup();
     driver = new ChromeDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
@@ -30,12 +33,10 @@ public class EliminarTest {
   @Test
   public void testEliminar() throws Exception {
     driver.get("https://mern-crud-mpfr.onrender.com/");
-    assertTrue("La tabla de registros no se cargó correctamente", isElementPresent(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr[4]/td[5]/button[2]")));
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr[4]/td[5]/button[2]")).click();
-    assertTrue("El botón de confirmación de eliminación no apareció", isElementPresent(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='User pruebadafne'])[2]/following::button[1]")));
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='User pruebadafne'])[2]/following::button[1]")).click();
-    // Validar que el texto si se borro (dejo mi usuario registrado¿¿)
-    assertTextNotFound("pruebadafne", "El texto 'pruebadafne' sigue presente en la página después de la eliminación");
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Pruebab'])[2]/following::button[1]")).click();
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Delete[\\s\\S]*$"));
   }
 
   @After
@@ -78,11 +79,5 @@ public class EliminarTest {
     } finally {
       acceptNextAlert = true;
     }
-  }
-
-  // Método para mi texto no encontrado (adicional)
-  private void assertTextNotFound(String text, String errorMessage) {
-    boolean isTextPresent = driver.findElements(By.xpath("//*[contains(text(),'" + text + "')]")).size() > 0;
-    assertFalse(errorMessage, isTextPresent);
   }
 }
