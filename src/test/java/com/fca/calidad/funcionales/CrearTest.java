@@ -1,6 +1,5 @@
 package com.fca.calidad.funcionales;
 
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 import java.util.regex.Pattern;
@@ -26,7 +25,7 @@ public class CrearTest {
   JavascriptExecutor js;
   @Before
   public void setUp() throws Exception {
-    WebDriverManager.chromedriver().setup();
+	WebDriverManager.chromedriver().setup();
     driver = new ChromeDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
@@ -39,64 +38,15 @@ public class CrearTest {
     driver.findElement(By.xpath("//div[@id='root']/div/div[2]/button")).click();
     driver.findElement(By.name("name")).click();
     driver.findElement(By.name("name")).clear();
-    driver.findElement(By.name("name")).sendKeys("Dafne Cruz");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Name'])[2]/following::div[2]")).click();
+    driver.findElement(By.name("name")).sendKeys("Dafne Cruz Aguilar");
     driver.findElement(By.name("email")).click();
     driver.findElement(By.name("email")).clear();
-    driver.findElement(By.name("email")).sendKeys("dafcruzaguilar@gmail.com");
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("5");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("6");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("7");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("8");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("9");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("10");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("11");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("12");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("13");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("14");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("15");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("16");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("17");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("18");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("19");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.name("age")).clear();
-    driver.findElement(By.name("age")).sendKeys("20");
+    driver.findElement(By.name("email")).sendKeys("dafcruz@gmail.com");
     driver.findElement(By.name("age")).click();
     driver.findElement(By.name("age")).clear();
     driver.findElement(By.name("age")).sendKeys("21");
-    driver.findElement(By.name("age")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Gender'])[2]/following::div[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Male'])[2]/following::div[1]")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Gender'])[2]/following::div[2]")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Female'])[1]/following::span[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
     driver.findElement(By.xpath("//i")).click();
   }
@@ -143,3 +93,6 @@ public class CrearTest {
     }
   }
 }
+
+
+
