@@ -31,16 +31,10 @@ public class EliminarTest {
   @Test
   public void testEliminar() throws Exception {
     driver.get("https://mern-crud-mpfr.onrender.com/");
-    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Pruebadafne'])[2]/following::button[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Pruebadafne'])[2]/following::button[1]")).click();
-    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Pruebadafne'])[2]/following::button[1]")).click();
-    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr/td[5]/button[2]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Pruebadafne'])[2]/following::button[1]")).click();
-    //assert.
-    
+    driver.findElement(By.xpath("//div[@id='root']/div/div[2]/table/tbody/tr[4]/td[5]/button[2]")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='User pruebadafne'])[2]/following::button[1]")).click();
   }
+
   
 
   @After
