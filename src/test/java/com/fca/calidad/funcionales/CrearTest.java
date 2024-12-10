@@ -47,11 +47,10 @@ public class CrearTest {
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Male'])[2]/following::div[1]")).click();
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
     driver.findElement(By.xpath("//i")).click();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Add[\\s\\S]*$"));
-    
+    // Verifica el texto esperado en la página
+	      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Successfully added![\\s\\S]*$"));
+	  }
 
-  }
 
   @After
   public void tearDown() throws Exception {
