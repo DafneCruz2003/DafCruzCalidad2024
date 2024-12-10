@@ -38,10 +38,17 @@ public class ModificarTest {
     driver.findElement(By.name("name")).clear();
     driver.findElement(By.name("name")).sendKeys("Pruebadafne12345");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Stop'])[1]/following::div[1]")).click();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Edit User[\\s\\S]*$"));
-  }
+    Thread.sleep(1000);
+	  driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Stop'])[1]/following::div[1]")).click();
+    Thread.sleep(1000);
+	  driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Gender'])[2]/following::div[2]")).click();
+
+	      driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
+	      Thread.sleep(1000);
+
+	      // Verifica el texto esperado en la página
+	      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Successfully added![\\s\\S]*$"));
+	  }
 
   @After
   public void tearDown() throws Exception {
