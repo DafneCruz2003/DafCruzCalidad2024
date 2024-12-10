@@ -46,9 +46,10 @@ public class ModificarTest {
 	      driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Woah!'])[1]/following::button[1]")).click();
 	      Thread.sleep(1000);
 
-	      // Verifica el texto esperado en la página
-	      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Successfully added![\\s\\S]*$"));
-	  }
+	    
+			      // Verifica el texto esperado en la página
+			      assertTrue(driver.findElement(By.cssSelector("BODY")).getText().matches("^[\\s\\S]*Successfully updated![\\s\\S]*$"));
+			  }
 
   @After
   public void tearDown() throws Exception {
